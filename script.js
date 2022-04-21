@@ -29,11 +29,12 @@ colorElements.forEach((element, index) => {
         if(image) {
             image.setAttribute('src', './assets/' + color + '_socks.jpeg')
         }
-    })
+    });
 }
-const rembuttonElements = document.querySelectorAll('.remFromCartBnt');
 
-for( let j = 0; j < buttonElements.length; j++) {
+const rembuttonElements = document.querySelectorAll('.remFromCartBtn');
+
+for(let j = 0; j < buttonElements.length; j++) {
     rembuttonElements[j].addEventListener('click', function() {
         const cartAmountEl1 = document.querySelector('.cartAmountEl');
         if(cartAmountEl1) {
@@ -44,6 +45,3 @@ for( let j = 0; j < buttonElements.length; j++) {
         }
     });
 }
-
-
-)
