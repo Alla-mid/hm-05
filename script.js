@@ -38,8 +38,15 @@ for(let j = 0; j < buttonElements.length; j++) {
     rembuttonElements[j].addEventListener('click', function() {
         const cartAmountEl = document.querySelector('.cartAmount');
         if(cartAmountEl) {
-            const amount = parseInt(cartAmountEl.textContent, 10) || 0;
-            cartAmountEl.innerHTML = amount - 1
+            const amount = parseInt(cartAmountEl.textContent, 10);
+            const nextAmount = amount - 1;
+            cartAmountEl.innerHTML = nextAmount;
+            if (nextAmount <= 0) {
+                cartAmountEl.classList.add('hidden');
+                cartAmountEl.innerHTML = 0;
+            } else {
+                cartAmountEl.classList.remove('hidden');
+            }
         } else {
             console.log('element does not exist')
         }
